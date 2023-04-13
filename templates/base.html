@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    {% block 'head' %}
+
+    {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="list">
+                <ul>
+                    {% if request.user.is_authenticated %}
+                    <li><a href="/accounts/home">Auth System</a></li>
+                    <li><a href="/accounts/logout">logOut </a></li>
+                    {% else %}
+                    <li><a href="/accounts/login">Log In </a></li>
+                    <li><a href="/accounts/signup">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+</html>

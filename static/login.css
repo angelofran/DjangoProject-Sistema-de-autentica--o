@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    justify-content: center;
+ 
+ 
+    flex-direction: column;
+    gap: 100px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.ele {
+    gap: 10px;
+    margin-left: 50px;
+}
+
+input {
+    width: 180px;
+    height: 25px;
+    border: 1px solid blueviol;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    color: black;
+}

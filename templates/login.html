@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock %}
+
+
+{% block title %}
+    log In
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="card">
+        <div class="ele">
+            <h1>Log In</h1>
+            <br>
+            <form action="{% url 'logIn' %}" method="POST" class="form">
+                {% csrf_token %}
+                <input type="text" placeholder="Username" name="username">
+                <br>
+                <br>
+                <input type="text" placeholder="Password" name="password">
+                <br>
+                <br>
+                <button>Enviar</button>
+                <p></p>
+                <a href="/accounts/signup">Ainda não tem conta? Clique aqui</a>
+            </form>
+        </div>
+        
+    </div>
+
+{% endblock %}
